@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="vendor/purecss/pure-min.css">
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="vendor/purecss/grids-responsive-old-ie-min.css">
+        <link rel="stylesheet" href="gh-fork-ribbon.ie.css">
     <![endif]-->
-    <!--[if gt IE 8]><!-->
+    <!--[if IE 9]>
         <link rel="stylesheet" href="vendor/purecss/grids-responsive-min.css">
+        <link rel="stylesheet" href="gh-fork-ribbon.ie.css">
+    <![endif]-->
+    <!--[if gt IE 9]><!-->
+        <link rel="stylesheet" href="vendor/purecss/grids-responsive-min.css">
+        <link rel="stylesheet" href="vendor/github-fork-ribbon-css/gh-fork-ribbon.css">
     <!--<![endif]-->
     <link rel="stylesheet" href="app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -50,8 +56,10 @@
       </div>
       <div class="pure-u-1" id="chat-room"></div>
     </div>
-    <a href="https://github.com/sscotth/FirebaseHostingDemo">
-      <img style="position: absolute; top: 0; left: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.io/fork-me-on-github-retina-ribbons/left-graphite@2x.png" alt="Fork me on GitHub">
-    </a>
+    <div class="github-fork-ribbon-wrapper left">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/sscotth/FirebaseHostingDemo">Fork me on GitHub</a>
+        </div>
+    </div>
   </body>
 </html>
