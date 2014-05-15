@@ -1,0 +1,24 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 240px;
+  max-width: 960px;
+}
+
+h3.voting-results {
+  display: none;
+}
+
+button.voting {
+  margin: 12px;
+}
+
+.pure-img {
+  display: inline;
+}
+
+#chat-room {
+  margin-top: 25px;
+}
