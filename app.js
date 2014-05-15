@@ -33,4 +33,56 @@ $(function() {
     $("h3.voting-results").show();
   });
 
+  // Chat
+
+  var fbChat = fb.child("chat");
+  var maxMessages = 20;
+  var fbChatMessages = fbChat.endAt().limit(maxMessages);
+
+  function updateChat(name, text) {
+    var $chatMessages = $("#chat-room").children();
+    addChatMessage(name, text);
+    if ($chatMessages.length + 1 > maxMessages) {
+      removeLastChatMessage($chatMessages);
+    }
+  }
+
+  function removeLastChatMessage($messages) {
+    $messages.first().remove();
+  }
+
+  function addChatMessage(name, text) {
+    $("<div>")
+      .text(text)
+      .prepend($("<strong>")
+      .text(name + ": "))
+      .appendTo($("#chat-room"));
+  }
+
+  fbChatMessages.on("child_added", function(snapshot) {
+    var msg = snapshot.val();
+    updateChat(msg.name, msg.text);
+  });
+
+  $("#chat-message").keypress(function(e) {
+    var enterKeyCode = 13;
+    if (e.keyCode === enterKeyCode) {
+      sendMsg();
+    }
+  });
+
+  $("#chat-submit").click(function(e) {
+    event.preventDefault();
+    sendMsg();
+  });
+
+  function sendMsg() {
+    var name = $("#chat-name").val();
+    var text = $("#chat-message").val();
+
+    if (name !== "" && text !== "") {
+      fbChat.push({ name: name, text: text });
+      $("#chat-message").val("");
+    }
+  }
 });
