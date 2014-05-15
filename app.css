@@ -1,10 +1,8 @@
 body {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 240px;
+  margin: 0 auto;
+  padding: 0 1em 240px;
   max-width: 960px;
+  text-align: center;
 }
 
 h3.voting-results {
@@ -21,4 +19,6 @@ button.voting {
 
 #chat-room {
   margin-top: 25px;
+  text-align: left;
+  font-family: monospace;
 }
